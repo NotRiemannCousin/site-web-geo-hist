@@ -1,0 +1,104 @@
+#onhover-conflitos {
+  position: absolute;
+}
+
+:where(#onhover-conflitos) {
+  overflow: hidden;
+  font-size: 100%;
+  padding: 1.2% 0.6%;
+  z-index: 100;
+  aspect-ratio: 1 / 1;
+  width: 20%;
+  background-color: #fafafa;
+  display: none;
+  border: #a8a8a8 solid 1px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+#onhover-conflitos hr {
+  height: 1px;
+  margin: .5em 0;
+  background-color: #999;
+}
+
+#onhover-conflitos hr.division {
+  height: 1px;
+  margin: .25em 0;
+  background-color: #ccc;
+}
+
+#onhover-conflitos h3 {
+  text-align: center;
+  color: #2e2e2e;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  z-index: 1;
+}
+
+#fit-map {
+  float: right;
+  opacity: 0;
+  top: 10px;
+  right: 10px;
+  padding: .3em;
+  position: relative;
+  margin-left: -100%;
+  background-color: var(---light-blue);
+  border-radius: .7em;
+  border: 1px solid var(---primary-dark);
+  box-shadow: 0 -3px 4px .1px var(---light) inset;
+  transition-duration: .3s;
+  transition-delay: .2s;
+}
+
+#fit-map * {
+  display: block;
+}
+
+#fit-map:hover {
+  opacity: 1;
+}
+
+.fade-in {
+  display: block;
+  animation: fade .3s ease-out forwards;
+}
+
+main {
+  background-image: linear-gradient(var(---light-blue-accent), var(---light-blue));
+  /* margin: auto; */
+  
+  box-sizing: border-box;
+}
+
+svg {
+  transition-duration: 1s;
+  width: 85%;
+  height: auto;
+  max-width: calc(100% - 2em);
+}
+
+path {
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+.justifier {
+  justify-content: center;
+  display: flex;
+}
+
+
+
+@keyframes fade {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    width: 20%;
+    opacity: 1;
+  }
+}

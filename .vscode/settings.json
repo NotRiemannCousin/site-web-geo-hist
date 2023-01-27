@@ -1,0 +1,21 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "files.exclude": {
+        "**/*.dll": true,
+        "**/*.map" : true,
+        "**/*.xcf" : true,
+        "**/map.html" : true,
+        "**/map.png" : true,
+        "FileDatabases/continents" : true
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "git.ignoreMissingGitWarning": true,
+    "files.autoSave": "afterDelay",
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 1,
+    "php.validate.executablePath": "C:\\EasyPHP-Devserver-17n\\eds-binaries\\php\\php5630vc11x86x220905194432\\php.exe",
+    "php.debug.executablePath": "C:\\EasyPHP-Devserver-17n\\eds-binaries\\php\\php5630vc11x86x220905194432\\php.exe",
+    "workbench.colorTheme": "Repl.it Theme",
+    "editor.maxTokenizationLineLength": 2000000,
+    "inlineFold.regex": "(class|className|d)=[`'{\"]([^`'\"}]{25,1000000})[`'\"}]"
+}

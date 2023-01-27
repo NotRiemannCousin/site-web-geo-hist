@@ -1,0 +1,27 @@
+
+
+html {
+    color: black;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+
+  }
+  
+  h2 {
+    font-family: 'Roboto', sans-serif;
+      text-align: center;
+
+  }
+
+p{
+    margin-top: 5%;
+    margin-left: 2%;
+    text-align: center;
+
+}

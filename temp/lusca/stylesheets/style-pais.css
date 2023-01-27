@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+html {
+    color: black;
+    margin: 0 auto;
+}
+
+h1 {
+    cursor: default;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h2 {
+      cursor: default;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+  }
+
+

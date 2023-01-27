@@ -1,0 +1,18 @@
+:root{
+    --color-grey: #c7c7c7;
+    --color-hover: #cccccc;
+    --font-page: 'Merriweather', serif;
+}
+main{
+    margin: 0;
+    background-color: var(--color-hover);
+    min-height: 80vh;
+}
+.content{
+    width: 50%;
+    min-height: 30vh;
+    background-color: #fff;
+    margin: 4% 0 4% 0;
+    border-radius: 10px;
+    padding: 5%;
+}
