@@ -4,6 +4,7 @@ var showResume = null;
 var fullMapSize = false;
 var selectedMap = null;
 var mapChanging = false;
+var frameRate = 24;
 
 mousePos = {
     x: 0,
@@ -27,14 +28,14 @@ function viewboxAnim(svg, view, time) {
     view.forEach(n => parseFloat(n));
     lastView.forEach(n => parseFloat(n));
 
-    for (let i = 0; i < time * 100; i++) {
+    for (let i = 0; i < time * frameRate; i++) {
         setTimeout(() => {
             for (let index = 0; index < 4; index++)
-                lastView[index] = (parseFloat(lastView[index]) + (parseFloat(view[index]) - parseFloat(lastView[index])) / (time * 10)).toFixed(2);
+                lastView[index] = (parseFloat(lastView[index]) + (parseFloat(view[index]) - parseFloat(lastView[index])) * i / (time * frameRate)).toFixed(2);
 
             svg.setAttribute('viewBox', `${lastView[0]} ${lastView[1]} ${lastView[2]} ${lastView[3]}`);
 
-            if (i == time * 100 - 1)
+            if (i == time * frameRate - 1)
                 mapChanging = false, svg.setAttribute('viewBox', `${view[0]} ${view[1]} ${view[2]} ${view[3]}`);
         }, i * 10);
     }
@@ -67,7 +68,7 @@ window.addEventListener('load', () => {
 
             let text = e.currentTarget.getAttribute('data-text').split('§');
 
-            resume.getElementsByTagName("div")[0].innerHTML = '<p>' +  text.join('</p>\n<hr class="division">\n<p>') + '</p>';
+            resume.getElementsByTagName("div")[0].innerHTML = '<a href="#" class="link">' +  text.join('</a>\n<hr class="division">\n<a href="#" class="link">') + '</a>';
         });
 
         paths[i].addEventListener('mousemove', e => {

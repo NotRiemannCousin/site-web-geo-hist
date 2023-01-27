@@ -5,8 +5,8 @@
         "**/*.map" : true,
         "**/*.xcf" : true,
         "**/map.html" : true,
-        "**/map.png" : true,
-        "FileDatabases/continents" : true
+        "**/img/" : true,
+        "FileDatabases" : true
     },
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "git.ignoreMissingGitWarning": true,
