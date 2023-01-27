@@ -4,6 +4,7 @@
 
 a.link {
 	text-decoration: none;
+	color:rgb(22, 0, 169);
 }
 
 :where(#onhover-conflitos) {
@@ -47,12 +48,13 @@ a.link {
 	padding: 0.3em;
 	position: relative;
 	margin-left: -100%;
-	background-color: var(---light-blue);
-	border-radius: 0.7em;
+	border-radius: 0.3em;
+	background-image: linear-gradient(var(---light-gray-accent), var(---light-gray));
 	border: 1px solid var(---primary-dark);
 	box-shadow: 0 -3px 4px 0.1px var(---light) inset;
 	transition-duration: 0.3s;
 	transition-delay: 0.2s;
+	z-index: 1;
 }
 
 #fit-map:hover {

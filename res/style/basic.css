@@ -9,16 +9,18 @@
     ---primary-accent: #281569;
     ---accent: #4122a8;
     ---light: #5a2ee8;
-    ---light-blue: #c7c3e8;
-    ---light-blue-accent: #f5f5ff;
+    ---light-gray: #c7c3e8;
+    /* light-blue */
+    ---light-gray-accent: #f5f5ff;
+    /* light-blue-accent */
 
     ---primary: #2d2c2e;
     ---primary-dark: #141414;
     ---primary-accent: #121010;
     ---accent: #8b8b8b;
     ---light: #707070;
-    ---light-blue: #9f9f9f;
-    ---light-blue-accent: #ffffff;
+    ---light-gray: #9f9f9f;
+    ---light-gray-accent: #ffffff;
 }
 
 html {
@@ -32,7 +34,7 @@ body {
     padding: 0;
     margin: 0;
     min-height: 100vh;
-    font: 14px sans-serif;
+    font-family: sans-serif;
 
     display: grid;
     gap: 0;
@@ -59,21 +61,20 @@ header {
 
 main {
     grid-area: main;
-    width: 100%;
     padding: 2em;
     flex-grow: 100;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(var(---light-blue-accent),
-            var(---light-blue));
+    background-image: linear-gradient(var(---light-gray-accent), var(---light-gray));
 }
 
 aside {
     background-color: var(---primary-accent);
     grid-area: aside;
     color: white;
-    display: none;
+    transition-duration: 0.1s;
+    /* display: none; */
 }
 
 footer {

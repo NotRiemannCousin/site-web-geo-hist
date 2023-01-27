@@ -27,6 +27,8 @@ if (!isset($_GET['conflict'])) {
     </header>
     <main>
     </main>
+    <aside>
+    </aside>
     <footer>&copy; Marcelo Henrique, Vitor Hugo, Pablo Vinicius - 2022</footer>
 </body>
 
