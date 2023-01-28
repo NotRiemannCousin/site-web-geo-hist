@@ -2,15 +2,14 @@
 	position: absolute;
 }
 
-a.link {
+.link {
 	text-decoration: none;
-	color:rgb(22, 0, 169);
+	color:var(---link);
 }
 
 :where(#onhover-conflitos) {
 	overflow: hidden;
 	padding: 1.2% 0.6%;
-	z-index: 100;
 	aspect-ratio: 1 / 1;
 	width: 20%;
 	background-color: #fafafa;
@@ -34,10 +33,8 @@ a.link {
 
 #onhover-conflitos h3 {
 	text-align: center;
-	color: #2e2e2e;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
-	z-index: 1;
 }
 
 #fit-map {
@@ -54,7 +51,6 @@ a.link {
 	box-shadow: 0 -3px 4px 0.1px var(---light) inset;
 	transition-duration: 0.3s;
 	transition-delay: 0.2s;
-	z-index: 1;
 }
 
 #fit-map:hover {

@@ -65,6 +65,7 @@ window.addEventListener('load', () => {
     var resume = document.getElementById('onhover-conflitos');
     var paths = document.getElementsByTagName('path');
     var map = document.getElementById('map');
+    var aside = document.getElementsByTagName('aside')[0];
 
     for (i = 0; i < paths.length; i++) {
         paths[i].addEventListener('mouseenter', (e) => {
@@ -75,7 +76,7 @@ window.addEventListener('load', () => {
             let text = e.currentTarget.getAttribute('data-text').split('§');
 
             str = `
-            <h3 style="color: var(----)">${e.currentTarget.getAttribute('data-name')}</h3>
+            <h3 class="link">${e.currentTarget.getAttribute('data-name')}</h3>
             <h3>Principais Conflitos e Zonas de Tensão</h3>
             <hr/>
             ${text.map(el => `<a href="#" class="link">${el}</a>\n`).join('<hr class= "division" />\n')}`;
@@ -119,15 +120,25 @@ window.addEventListener('load', () => {
             if (selectedMap == null) {
                 selectedMap = e.currentTarget;
                 Array.from(document.getElementsByTagName('path')).map((elem) => {
-                    if (elem != e.currentTarget) elem.style.opacity = 0;
+                    if (elem != selectedMap) elem.style.opacity = 0;
                 });
 
-                let box = e.currentTarget.getAttribute('data-box').split(',');
+                let box = selectedMap.getAttribute('data-box').split(',');
 
                 viewboxAnim(document.getElementById('map'), box, 1);
-                map.style.width = '100%';
 
-                document.getElementsByTagName('aside')[0].style.width = parseFloat(window.innerWidth / 3) + 'px';
+
+                let text = e.currentTarget.getAttribute('data-text').split('§');
+                aside.innerHTML = `
+                <div class="aside-content">
+                <h1 style="margin-bottom: 4rem;font-size: xxx-large;">
+                ${selectedMap.getAttribute('data-name')}
+                </h1>
+                ${text.map(el => `<a href="#">${el}</a>`).join('')}
+                </div>`;
+
+                map.style.width = '100%';
+                aside.style.width = '33.333vw';
             } else {
                 selectedMap = e.currentTarget;
 
@@ -135,10 +146,13 @@ window.addEventListener('load', () => {
                     if (elem != selectedMap) elem.style.opacity = 1;
                 });
 
+
                 selectedMap = null;
                 viewboxAnim(map, map.getAttribute('data-viewbox').split(' '), 1);
 
-                document.getElementsByTagName('aside')[0].style.width = '0';
+
+                aside.style.width = '0';
+                aside.style.translate = 'inherit';
                 map.style.width = 'inherit';
             }
         });

@@ -21,6 +21,8 @@
     ---light: #707070;
     ---light-gray: #9f9f9f;
     ---light-gray-accent: #ffffff;
+
+    ---link: #1600a9;
 }
 
 html {
@@ -35,34 +37,36 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: sans-serif;
+    z-index: -2;
 
     display: grid;
-    gap: 0;
     grid:
-        "header header" auto "main   aside" 1fr "footer footer" auto / 1fr auto;
+        "header header" auto
+        "main   aside" 1fr
+        "footer footer" auto
+        / 1fr   auto;
 }
 
-#title {
-    font-family: "Times New Roman", Times, serif;
-    text-align: center;
-    font-size: 3.5rem;
-    color: white;
-}
 
 header {
     grid-area: header;
     background-image: linear-gradient(var(---primary), var(---primary-dark));
-    box-shadow: rgba(0, 0, 0, 0.475) 0 4px 6px 0px;
+    box-shadow: #000000 0 4px 6px 0px;
     padding: 1em 0;
     overflow: hidden;
     width: 100%;
-    z-index: 1;
+}
+
+header>* {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: xxx-large;
+    color: white;
 }
 
 main {
     grid-area: main;
     padding: 2em;
-    flex-grow: 100;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -71,23 +75,42 @@ main {
 
 aside {
     background-color: var(---primary-accent);
+    box-shadow: #000000 -4px 0 6px 0px;
     grid-area: aside;
     color: white;
     transition-duration: 0.1s;
-    /* display: none; */
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+aside h1 {
+    margin-bottom: 4rem;
+    font-size: xxx-large;
+}
+
+aside a {
+    color: #c6c6c6;
+    text-decoration: none;
+    display: block;
+}
+
+aside a:hover {
+    color: white;
+}
+
+aside .aside-content {
+    box-sizing: border-box;
+    padding: 8em 4em;
+    width: 33.3333vw;
 }
 
 footer {
     grid-area: footer;
     background-image: linear-gradient(var(---primary-dark), var(---primary));
-    box-shadow: rgba(0, 0, 0, 0.475) 0 -4px 6px 0px;
+    box-shadow: #000000 0 -4px 6px 0px;
     color: white;
-    font-size: 0.8em;
     padding-top: 2em;
     padding-bottom: 1.5em;
     text-align: center;
-    transition-duration: 1s;
     padding: 0.7em;
-    text-align: center;
-    overflow: hidden;
 }

@@ -7,6 +7,8 @@ if (!isset($_GET['conflict'])) {
     die;
 }
 
+// $conflito = R::load('page', "$_GET[conflict] = name");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,8 @@ if (!isset($_GET['conflict'])) {
 
 <body>
     <header>
-        <h1 id="title"> Mapa dos Conflitos Mundiais</h1>
+        <h1> Mapa dos Conflitos Mundiais</h1>
+        <!-- <h1> ?= $conflito->nome ?></h1> -->
     </header>
     <main>
     </main>
