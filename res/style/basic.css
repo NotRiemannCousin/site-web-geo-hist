@@ -85,6 +85,10 @@ aside hr {
     background-color: black;
 }
 
+aside hr+a {
+    margin-bottom: 1em;
+}
+
 aside h1 {
     margin: 1rem 0 1rem .6em;
     font-size: xxx-large;
@@ -99,11 +103,12 @@ aside a {
 
 aside a:hover {
     color: white;
+    text-shadow: 0 0 3px white;
 }
 
 aside .aside-content {
     box-sizing: border-box;
-    padding: 8em 4em;
+    padding: 4em 4em;
     width: 33.3333vw;
 }
 

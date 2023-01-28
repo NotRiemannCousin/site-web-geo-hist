@@ -4,7 +4,7 @@ var showResume = null;
 var fullMapSize = false;
 var selectedMap = null;
 var mapChanging = false;
-var frameRate = 120;
+var frameRate = 60;
 
 mousePos = {
     x: 0,
@@ -76,8 +76,8 @@ window.addEventListener('load', () => {
             let text = e.currentTarget.getAttribute('data-text').split('§');
 
             str = `
-            <h3 class="link">${e.currentTarget.getAttribute('data-name')}</h3>
-            <h3>Principais Conflitos e Zonas de Tensão</h3>
+            <h2>${e.currentTarget.getAttribute('data-name')}</h2>
+            <h3 style="color: var(---light)">Principais Conflitos e Zonas de Tensão</h3>
             <hr/>
             ${text.map(el => `<a href="#" class="link">${el}</a>\n`).join('<hr class= "division" />\n')}`;
             resume.innerHTML = str;
