@@ -131,9 +131,11 @@ window.addEventListener('load', () => {
                 let text = e.currentTarget.getAttribute('data-text').split('§');
                 aside.innerHTML = `
                 <div class="aside-content">
-                <h1 style="margin-bottom: 4rem;font-size: xxx-large;">
+                <hr>
+                <h1>
                 ${selectedMap.getAttribute('data-name')}
                 </h1>
+                <hr>
                 ${text.map(el => `<a href="#">${el}</a>`).join('')}
                 </div>`;
 

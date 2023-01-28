@@ -41,10 +41,7 @@ body {
 
     display: grid;
     grid:
-        "header header" auto
-        "main   aside" 1fr
-        "footer footer" auto
-        / 1fr   auto;
+        "header header" auto "main   aside" 1fr "footer footer" auto / 1fr auto;
 }
 
 
@@ -83,13 +80,19 @@ aside {
     box-sizing: border-box;
 }
 
+aside hr {
+    height: 2px;
+    background-color: black;
+}
+
 aside h1 {
-    margin-bottom: 4rem;
+    margin: 1rem 0 1rem .6em;
     font-size: xxx-large;
 }
 
 aside a {
     color: #c6c6c6;
+    margin: .3rem 0 .3rem .4em;
     text-decoration: none;
     display: block;
 }
