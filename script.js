@@ -30,6 +30,7 @@ function viewboxAnim(animate, to, time) {
 // #endregion
 
 window.addEventListener('load', () => {
+    
     // #region mouse capture
     const root = document.documentElement;
     document.addEventListener('mousemove', (e) => {
@@ -61,6 +62,7 @@ window.addEventListener('load', () => {
             <h3 style="color: var(---light)">Principais Conflitos e Zonas de Tensão</h3>
             <hr/>
             ${text.map(el => `<a href="#" class="link">${el}</a>\n`).join('<hr class= "division" />\n')}`;
+            resume.innerHTML = str;
         });
 
         paths[i].addEventListener('mousemove', (e) => {
@@ -98,7 +100,7 @@ window.addEventListener('load', () => {
 
             if (selectedMap == null) {
                 selectedMap = e.currentTarget;
-                Array.from(document.getElementsByTagName('path')).map((elem) => {
+                Array.from(paths).map((elem) => {
                     if (elem != selectedMap) elem.style.opacity = 0;
                 });
 
@@ -125,7 +127,7 @@ window.addEventListener('load', () => {
             } else {
                 selectedMap = e.currentTarget;
 
-                Array.from(document.getElementsByTagName('path')).map((elem) => {
+                Array.from(paths).map((elem) => {
                     if (elem != selectedMap) elem.style.opacity = 1;
                 });
 
