@@ -15,38 +15,17 @@ mousePos = {
 
 // #region function
 
-function viewboxAnim(svg, view, time) {
+function viewboxAnim(animate, to, time) {
     if (mapChanging == true) return;
     mapChanging = true;
 
-    let lastView = svg.getAttribute('viewBox').split(' ');
+    animate.setAttribute('from', animate.getAttribute('to'));
+    animate.setAttribute('to', to);
+    animate.setAttribute('dur', time);
 
-    view.forEach((n) => parseFloat(n));
-    lastView.forEach((n) => parseFloat(n));
+    animate.beginElement();
 
-    for (let i = 0; i < time * frameRate; i++) {
-        setTimeout(() => {
-            for (let index = 0; index < 4; index++)
-                lastView[index] = (
-                    parseFloat(lastView[index]) +
-                    ((parseFloat(view[index]) - parseFloat(lastView[index])) * i) /
-                    (time * frameRate)
-                ).toFixed(2);
-
-            svg.setAttribute(
-                'viewBox',
-                `${lastView[0]} ${lastView[1]} ${lastView[2]} ${lastView[3]}`
-            );
-
-            if (i == time * frameRate - 1) {
-                mapChanging = false;
-                svg.setAttribute(
-                    'viewBox',
-                    `${view[0]} ${view[1]} ${view[2]} ${view[3]}`
-                );
-            }
-        }, i * 1000 / frameRate);
-    }
+    setInterval(() => { mapChanging = false; }, 1000 * time);
 }
 // #endregion
 
@@ -66,6 +45,7 @@ window.addEventListener('load', () => {
     var paths = document.getElementsByTagName('path');
     var map = document.getElementById('map');
     var aside = document.getElementsByTagName('aside')[0];
+    var svg_anim = document.getElementById('svg-anim');
 
     for (i = 0; i < paths.length; i++) {
         paths[i].addEventListener('mouseenter', (e) => {
@@ -80,8 +60,6 @@ window.addEventListener('load', () => {
             <h3 style="color: var(---light)">Principais Conflitos e Zonas de Tensão</h3>
             <hr/>
             ${text.map(el => `<a href="#" class="link">${el}</a>\n`).join('<hr class= "division" />\n')}`;
-            resume.innerHTML = str;
-            console.log(str);
         });
 
         paths[i].addEventListener('mousemove', (e) => {
@@ -123,9 +101,7 @@ window.addEventListener('load', () => {
                     if (elem != selectedMap) elem.style.opacity = 0;
                 });
 
-                let box = selectedMap.getAttribute('data-box').split(',');
-
-                viewboxAnim(document.getElementById('map'), box, 1);
+                viewboxAnim(svg_anim, selectedMap.getAttribute('data-box'), 1);
 
 
                 let text = e.currentTarget.getAttribute('data-text').split('§');
@@ -140,7 +116,11 @@ window.addEventListener('load', () => {
                 </div>`;
 
                 map.style.width = '100%';
-                aside.style.width = '33.333vw';
+                if (window.matchMedia('(min-width: 414px)').matches)
+                    aside.style.width = '33.333vw';
+                else
+                    aside.style.height = 'auto';
+
             } else {
                 selectedMap = e.currentTarget;
 
@@ -150,10 +130,15 @@ window.addEventListener('load', () => {
 
 
                 selectedMap = null;
-                viewboxAnim(map, map.getAttribute('data-viewbox').split(' '), 1);
+                console.log("sla");
+                viewboxAnim(svg_anim, map.getAttribute('data-viewbox'), 1);
 
 
-                aside.style.width = '0';
+                if (window.matchMedia('(min-width: 414px)').matches)
+                    aside.style.width = '0';
+                // else
+                // aside.style.height = '0';  
+
                 aside.style.translate = 'inherit';
                 map.style.width = 'inherit';
             }

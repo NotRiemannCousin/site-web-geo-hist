@@ -41,7 +41,7 @@ body {
 
     display: grid;
     grid:
-        "header header" auto "main   aside" 1fr "footer footer" auto / 1fr auto;
+        "header" auto "main" auto "aside" 1fr "footer" auto / 1fr;
 }
 
 
@@ -75,8 +75,9 @@ aside {
     box-shadow: #000000 -4px 0 6px 0px;
     grid-area: aside;
     color: white;
-    transition-duration: 0.1s;
+    transition-duration: 1s;
     overflow-x: hidden;
+    /* overflow-y: scroll; */
     box-sizing: border-box;
 }
 
@@ -109,7 +110,7 @@ aside a:hover {
 aside .aside-content {
     box-sizing: border-box;
     padding: 4em 4em;
-    width: 33.3333vw;
+    width: 100vw;
 }
 
 footer {
@@ -121,4 +122,16 @@ footer {
     padding-bottom: 1.5em;
     text-align: center;
     padding: 0.7em;
+}
+
+
+@media screen and (min-width: 414px) {
+    body {
+        grid:
+            "header header" auto "main   aside" 1fr "footer footer" auto / 1fr auto;
+    }
+
+    aside .aside-content {
+        width: 33.3333vw;
+    }
 }
