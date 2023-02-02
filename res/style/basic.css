@@ -54,14 +54,23 @@ header {
     width: 100%;
 }
 
-header a {
+header * {
     color: white;
     text-decoration: none;
 }
+
 header>* {
     font-family: "Times New Roman", Times, serif;
     text-align: center;
     font-size: xxx-large;
+}
+
+h2+p {
+    margin-top: 1em;
+}
+
+p+h2 {
+    margin-top: 1em;
 }
 
 main {
@@ -71,6 +80,10 @@ main {
     justify-content: center;
     flex-direction: column;
     background-image: linear-gradient(var(---light-gray-accent), var(---light-gray));
+}
+
+main {
+    text-align: justify;
 }
 
 aside {
@@ -127,6 +140,14 @@ footer {
     padding: 0.7em;
 }
 
+p+.ref{
+    margin-top: 2em;
+}
+
+.ref a {
+    display: block;
+}
+
 
 @media screen and (min-width: 414px) {
     body {
@@ -136,5 +157,9 @@ footer {
 
     aside .aside-content {
         width: 33.3333vw;
+    }
+
+    main {
+        font-size: 1.2em;
     }
 }
