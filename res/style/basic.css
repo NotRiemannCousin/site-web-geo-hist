@@ -54,11 +54,14 @@ header {
     width: 100%;
 }
 
+header a {
+    color: white;
+    text-decoration: none;
+}
 header>* {
     font-family: "Times New Roman", Times, serif;
     text-align: center;
     font-size: xxx-large;
-    color: white;
 }
 
 main {

@@ -30,7 +30,7 @@ function viewboxAnim(animate, to, time) {
 // #endregion
 
 window.addEventListener('load', () => {
-    
+
     // #region mouse capture
     const root = document.documentElement;
     document.addEventListener('mousemove', (e) => {
@@ -56,12 +56,18 @@ window.addEventListener('load', () => {
                 return;
 
             let text = e.currentTarget.getAttribute('data-text').split('§');
+            let link = e.currentTarget.getAttribute('data-link').split('§');
+
+            for (let i = 0; i < text.length; i++) {
+                text[i] = `<a href="conflicts/${link[i]}.html" class="link">${text[i]}</a>\n`;
+            }
 
             str = `
             <h2>${e.currentTarget.getAttribute('data-name')}</h2>
             <h3 style="color: var(---light)">Principais Conflitos e Zonas de Tensão</h3>
             <hr/>
-            ${text.map(el => `<a href="#" class="link">${el}</a>\n`).join('<hr class= "division" />\n')}`;
+            ${text.join('<hr class= "division" />\n')}`;
+
             resume.innerHTML = str;
         });
 
@@ -108,6 +114,12 @@ window.addEventListener('load', () => {
 
 
                 let text = e.currentTarget.getAttribute('data-text').split('§');
+                let link = e.currentTarget.getAttribute('data-link').split('§');
+
+                for (let i = 0; i < text.length; i++) {
+                    text[i] = `<a href="conflicts/${link[i]}.html" class="link">${text[i]}</a>\n`;
+                }
+
                 aside.innerHTML = `
                 <div class="aside-content">
                 <hr>
@@ -115,7 +127,7 @@ window.addEventListener('load', () => {
                 ${selectedMap.getAttribute('data-name')}
                 </h1>
                 <hr>
-                ${text.map(el => `<a href="#">${el}</a>`).join('')}
+                ${text.join('')}
                 </div>`;
 
                 map.style.width = '100%';
