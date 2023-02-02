@@ -45,6 +45,7 @@ window.addEventListener('load', () => {
     var paths = document.getElementsByTagName('path');
     var map = document.getElementById('map');
     var aside = document.getElementsByTagName('aside')[0];
+    var main = document.getElementsByTagName('main')[0];
     var svg_anim = document.getElementById('svg-anim');
 
     for (i = 0; i < paths.length; i++) {
@@ -130,7 +131,6 @@ window.addEventListener('load', () => {
 
 
                 selectedMap = null;
-                console.log("sla");
                 viewboxAnim(svg_anim, map.getAttribute('data-viewbox'), 1);
 
 
@@ -160,11 +160,18 @@ window.addEventListener('load', () => {
         document.getElementsByTagName('header')[0].style.display = mode;
         document.getElementsByTagName('footer')[0].style.display = mode;
 
-        document.getElementById('map').style.setProperty('height', '100vh');
-        document.getElementById('map').style.setProperty('width', 'auto');
+        map.style.setProperty('height', '100vh');
+        map.style.setProperty('width', 'auto');
+        map.style.padding = '0';
+        main.style.padding = '0';
+        document.body.style.padding = '0';
+
         if (fullMapSize) {
-            document.getElementById('map').style.removeProperty('height');
-            document.getElementById('map').style.removeProperty('width');
+            map.style.removeProperty('height');
+            map.style.removeProperty('width');
+            map.style.padding = 'inherit';
+            main.style.padding = 'inherit';
+            document.body.style.padding = 'inherit';
         }
 
         fullMapSize = !fullMapSize;
