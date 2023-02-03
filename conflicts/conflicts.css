@@ -1,0 +1,13 @@
+@import url("../res/style/basic.css");
+
+img{
+    display: block;
+    width: 60%;
+    margin: 2em auto;
+}
+
+main{
+    padding: 1em 4em 3em 4em;
+    /* padding: 1em; */
+    /* background-color: white; */
+}

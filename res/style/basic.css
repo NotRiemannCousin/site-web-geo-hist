@@ -80,9 +80,6 @@ main {
     justify-content: center;
     flex-direction: column;
     background-image: linear-gradient(var(---light-gray-accent), var(---light-gray));
-}
-
-main {
     text-align: justify;
 }
 
