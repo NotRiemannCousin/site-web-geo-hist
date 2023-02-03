@@ -137,14 +137,10 @@ footer {
     padding: 0.7em;
 }
 
-p+.ref{
-    margin-top: 2em;
+a{
+    color: white;
+    text-decoration: none;
 }
-
-.ref a {
-    display: block;
-}
-
 
 @media screen and (min-width: 414px) {
     body {

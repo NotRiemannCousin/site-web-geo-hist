@@ -7,7 +7,31 @@ img{
 }
 
 main{
-    padding: 1em 4em 3em 4em;
+    padding: 4em 3em 6em 3em;
     /* padding: 1em; */
     /* background-color: white; */
+}
+
+.content{
+    padding: 3em 4em;
+    background-color: var(---primary);
+    color: white;
+    border-radius: 3em;
+    border: 3px solid var(---primary-dark);
+}
+
+.content a{
+    color: cadetblue;
+    text-decoration: none;
+}
+
+.ref{
+    margin-top: 2em;
+    border-left: 0.3em solid cadetblue;
+    margin-top: 2em;
+    padding: 0.5em 0 0.5em 2em;
+}
+
+.ref a {
+    display: block;
 }

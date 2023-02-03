@@ -117,7 +117,7 @@ window.addEventListener('load', () => {
                 let link = e.currentTarget.getAttribute('data-link').split('§');
 
                 for (let i = 0; i < text.length; i++) {
-                    text[i] = `<a href="conflicts/${link[i]}.html" class="link">${text[i]}</a>\n`;
+                    text[i] = `<a href="conflicts/${link[i]}.html">${text[i]}</a>\n`;
                 }
 
                 aside.innerHTML = `
